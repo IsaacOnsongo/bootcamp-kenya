@@ -1,0 +1,37 @@
+<html>
+	<head>
+		<title>Graphs</title>
+		<script type = "text/javascript" src = "graph2.js"></script>
+	</head>
+	<body>
+		<canvas id="canvas" width="640" height="480" />
+		<script>
+
+			var michael = graph.newNode('Michael', 20, 30);
+			var jessica = graph.newNode('Jessica', 50, 70);
+			var timothy = graph.newNode('Timothy', 10, 10);
+			var barbara = graph.newNode('Barbara', 30, 70);
+			var franklin = graph.newNode('Franklin', 70, 120);
+			var monty = graph.newNode('Monty', 56, 48);
+			var james = graph.newNode('James', 68, 90);
+			var bianca = graph.newNode('Bianca', 55, 74);
+			var dennis = graph.newNode('Dennis', 20, 320);
+
+			graph.newEdge(dennis, michael, 'red');
+			graph.newEdge(michael, dennis, 'green');
+			graph.newEdge(michael, jessica, 'blue');
+			graph.newEdge(jessica, barbara, 'yellow');
+			graph.newEdge(michael, timothy, 'orange');
+			graph.newEdge(franklin, monty, 'black');
+			graph.newEdge(dennis, monty, 'purple');
+			graph.newEdge(monty, james, 'pink');
+			graph.newEdge(barbara, timothy, 'orange');
+			graph.newEdge(dennis, bianca, 'red');
+			graph.newEdge(bianca, monty, 'black');
+
+			graph.drawGraph();
+
+		</script>
+	</body>
+	
+</html>
