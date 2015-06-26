@@ -106,15 +106,15 @@ Graph.prototype.drawGraph = function(){
 		ctx.moveTo(x, y);
 		ctx.lineTo(tx, ty);
 		ctx.lineWidth = 1;
-  	ctx.strokeStyle = color;
-  	ctx.stroke();
-  	ctx.fillStyle = "white"
-  	ctx.strokeStyle = color;
-    ctx.rect(rectx, recty, 65, 18);
-   	ctx.fill();
-   	ctx.stroke();
+		ctx.strokeStyle = color;
+		ctx.stroke();
+		ctx.fillStyle = "white"
+		ctx.strokeStyle = color;
+		ctx.rect(rectx, recty, 65, 18);
+		ctx.fill();
+		ctx.stroke();
 
-   	ctx.fillStyle = color
+		ctx.fillStyle = color
 		ctx.font = "13px Arial";
 		ctx.fillText(label,x,y);
 
