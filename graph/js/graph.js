@@ -1,4 +1,3 @@
-var Connect = {};
 var Graph = function() {
 	this.nodeSet = {};
 	this.nodes = [];
