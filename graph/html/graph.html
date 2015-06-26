@@ -1,14 +1,23 @@
 <html>
 	<head>
-		<title>Graphs</title>		
+		<title>Graphs</title>	
+		<script type = "text/javascript" src = "../js/graph.js"></script>	
+		<link rel="stylesheet" type="text/css" href="../css/graph.csss">
 	</head>
 	<body>
 		<div class = "head" style = "width: 100%; height: 80px; background: purple; color: white; font-size: 35px; text-align: center; padding-top: 40px;"><strong>GRAPHS</strong></div>
-		<div class = "divCanvas" style = "margin: 10px auto; text-align: center; width: 680px; height: 400px; box-shadow: 3px 3px 3px 5px lightgrey;">
+		<div class = "divCanvas" style = "margin: 10px auto; text-align: center; width: 680px; height: auto; box-shadow: 3px 3px 3px 5px lightgrey;">
 			<h1>Directed graph</h1>
-			<canvas id="canvas" width="640" height="400" />
+			<canvas id="canvas" width="640" height="400"></canvas>
 		</div>
-		<script type = "text/javascript" src = "../js/graph.js"></script>
+		<div style ="margin: 10px auto; text-align: center; width: 640px; height: auto; box-shadow: 3px 3px 3px 5px lightgrey; padding: 20px;">
+			
+			Enter start point to get paths: <input type = "text" id = "startPoint" name = "startPoint" />
+			<input type = "button" name = "getPath" value = "Get Path" onclick = "getPath();" />
+			
+			<div id = "path" style = "padding-top: 10px;"></div>
+		</div>
+		
 		<script>
 
 			var nairobi = graph.newNode('Nairobi', 280, 130);
@@ -16,19 +25,24 @@
 			var nyeri = graph.newNode('Nyeri', 110, 280);
 			var kitengela = graph.newNode('Kitengela', 130, 70);
 			var kajiado = graph.newNode('Kajiado', 390, 100);
-			var machakos = graph.newNode('Machakos', 190, 200);
 			var kericho = graph.newNode('Kericho', 10, 150);
-			
+			var machakos = graph.newNode('Machakos', 190, 200);
 
 			graph.newEdge(nairobi, nakuru, 'red');
 			graph.newEdge(nakuru, nyeri, 'green');
 			graph.newEdge(nyeri, kitengela, 'blue');
 			graph.newEdge(kitengela, kajiado, 'purple');
-			graph.newEdge(kajiado, nakuru, 'orange');
-			graph.newEdge(nakuru, kericho, 'orange');
-			graph.newEdge(machakos, kitengela, 'orange');
+			graph.newEdge(kajiado, machakos, 'orange');
+			graph.newEdge(kericho, nyeri, 'black');
+			graph.newEdge(machakos, kericho, 'magenta');
 			
 			graph.drawGraph();
+			function getPath() {
+				var startPoint = document.getElementById("startPoint").value;
+				var path = traverse(startPoint).join(" - ");
+				document.getElementById("path").innerHTML = path;
+			}
+
 
 		</script>
 	</body>

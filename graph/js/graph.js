@@ -103,20 +103,22 @@ Graph.prototype.drawGraph = function(){
 		var rectx = x - 3;
 		var recty = y - 13;
 
-		ctx.strokeStyle = color
-    ctx.rect(rectx, recty, 60, 18);
-    ctx.stroke();
-
-    ctx.fillStyle = color
-		ctx.font = "13px Arial";
-		ctx.fillText(label,x,y);
-
 		ctx.beginPath();
 		ctx.moveTo(x, y);
 		ctx.lineTo(tx, ty);
 		ctx.lineWidth = 1;
   	ctx.strokeStyle = color;
   	ctx.stroke();
+  	ctx.fillStyle = "white"
+  	ctx.strokeStyle = color;
+    ctx.rect(rectx, recty, 65, 18);
+   	ctx.fill();
+   	ctx.stroke();
+
+   	ctx.fillStyle = color
+		ctx.font = "13px Arial";
+		ctx.fillText(label,x,y);
+
 
 	}
 };
@@ -125,7 +127,7 @@ var traverse = function (startNode){
     this.startNode = startNode;
     for(g = 0; g < graph.nodes.length; g++){
         if(startNode == graph.edges[g].source.data.label)
-        starNode = graph.edges[g].id;
+        startNode = graph.edges[g].id;
     }
     var d = {};
     var e = [];
