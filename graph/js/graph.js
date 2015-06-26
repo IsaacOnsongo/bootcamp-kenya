@@ -91,7 +91,7 @@ Graph.prototype.traverse = function() {
 Graph.prototype.drawGraph = function(){
 	var c = document.getElementById("canvas");
 	var ctx = c.getContext("2d");
-
+	
 	for(var j = 0; j < this.edges.length; j++){
 		var label = this.nodes[j].data.label;
 		var x = this.nodes[j].data.x;

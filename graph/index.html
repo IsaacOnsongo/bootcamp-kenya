@@ -1,8 +1,8 @@
 <html>
 	<head>
 		<title>Graphs</title>	
-		<script type = "text/javascript" src = "../js/graph.js"></script>	
-		<link rel="stylesheet" type="text/css" href="../css/graph.csss">
+		<script type = "text/javascript" src = "js/graph.js"></script>	
+		<link rel="stylesheet" type="text/css" href="css/graph.csss">
 	</head>
 	<body>
 		<div class = "head" style = "width: 100%; height: 80px; background: purple; color: white; font-size: 35px; text-align: center; padding-top: 40px;"><strong>GRAPHS</strong></div>
@@ -11,6 +11,10 @@
 			<canvas id="canvas" width="640" height="400"></canvas>
 		</div>
 		<div style ="margin: 10px auto; text-align: center; width: 640px; height: auto; box-shadow: 3px 3px 3px 5px lightgrey; padding: 20px;">
+			<!--Create node: Label: <input type = "text" id = "node" name = "node" size = "10"/> 
+			X: <input type = "text" id = "xCoord" name = "xCoord" size = "3" />
+			Y: <input type = "text" id = "yCoord" name = "yCoord" size = "3" />
+			<input type = "button" name = "createNode" value = "Create Node" onclick = "" /><br /><br />-->
 			
 			Enter start point to get paths: <input type = "text" id = "startPoint" name = "startPoint" />
 			<input type = "button" name = "getPath" value = "Get Path" onclick = "getPath();" />
